@@ -1,0 +1,20 @@
+[package]
+name = "tokio-test"
+version = "0.1.0"
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+rand = "0.8.4"
+image = "0.23"
+crossterm = "0.20"
+libc = "0.2"
+base64 = "0.13"
+tempfile = "3.2"
+
+# All dependencies (but not this crate itself or any workspace member)
+# will be compiled with -Copt-level=3 . This includes build dependencies.
+[profile.dev.package."*"]
+opt-level = 3
