@@ -104,25 +104,6 @@ fn main() -> crossterm::Result<()> {
                     *can_display_image = false;
                 }
 
-                // FIXME(Chris): Remove blocking on the thread. In theory, we should never need to
-                // wait for these async threads.
-                // match runtime.block_on(image_handle) {
-                //     Ok(_) => {
-                //         execute!(
-                //             w,
-                //             cursor::MoveTo(left_x, 2),
-                //             style::Print("The process finished before it was killed."),
-                //         )?;
-                //     },
-                //     Err(_) => {
-                //         execute!(
-                //             w,
-                //             cursor::MoveTo(left_x, 2),
-                //             style::Print("The process was killed."),
-                //         )?;
-                //     },
-                // }
-
                 // w.write(b"\x1b_Ga=d;\x1b\\")?;
                 // w.flush()?;
 
